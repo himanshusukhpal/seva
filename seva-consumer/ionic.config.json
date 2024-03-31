@@ -1,0 +1,7 @@
+{
+  "name": "seva-consumer",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

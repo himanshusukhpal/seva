@@ -1,0 +1,7 @@
+{
+  "name": "seva-",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

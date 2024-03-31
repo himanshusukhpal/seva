@@ -1,0 +1,8 @@
+To generate AWS Lambda handler
+claudia generate-serverless-express-proxy --express-module dist/app
+
+To deploy a new version
+claudia create --handler lambda.handler --deploy-proxy-api --region <region eg -ap-south-1> --version <eg - development/production>
+
+To update a version
+claudia update --version <version name>

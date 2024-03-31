@@ -1,0 +1,11 @@
+{
+  "lambda": {
+    "role": "project-backend-executor",
+    "name": "project-backend",
+    "region": "ap-south-1"
+  },
+  "api": {
+    "id": "6so3kmq9n9",
+    "url": "https://***.execute-api.ap-south-1.amazonaws.com/latest"
+  }
+}

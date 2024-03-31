@@ -1,0 +1,88 @@
+"filename", "language", "TypeScript", "JSON", "JavaScript", "Properties", "JSON with Comments", "comment", "blank", "total"
+"/Users/himanshusukhpal/Desktop/Program Files/Projects/seva/seva-backend/.env", "Properties", 0, 0, 0, 7, 0, 11, 4, 22
+"/Users/himanshusukhpal/Desktop/Program Files/Projects/seva/seva-backend/claudia.json", "JSON", 0, 11, 0, 0, 0, 0, 0, 11
+"/Users/himanshusukhpal/Desktop/Program Files/Projects/seva/seva-backend/dist/app.js", "JavaScript", 0, 0, 69, 0, 0, 3, 1, 73
+"/Users/himanshusukhpal/Desktop/Program Files/Projects/seva/seva-backend/dist/app/config/auth.config.js", "JavaScript", 0, 0, 10, 0, 0, 0, 1, 11
+"/Users/himanshusukhpal/Desktop/Program Files/Projects/seva/seva-backend/dist/app/config/db.config.js", "JavaScript", 0, 0, 33, 0, 0, 10, 1, 44
+"/Users/himanshusukhpal/Desktop/Program Files/Projects/seva/seva-backend/dist/app/controllers/account/account.controller.js", "JavaScript", 0, 0, 27, 0, 0, 0, 1, 28
+"/Users/himanshusukhpal/Desktop/Program Files/Projects/seva/seva-backend/dist/app/controllers/accounts/accounts.controller.js", "JavaScript", 0, 0, 159, 0, 0, 2, 1, 162
+"/Users/himanshusukhpal/Desktop/Program Files/Projects/seva/seva-backend/dist/app/controllers/authorize/authorize.controller.js", "JavaScript", 0, 0, 80, 0, 0, 11, 1, 92
+"/Users/himanshusukhpal/Desktop/Program Files/Projects/seva/seva-backend/dist/app/controllers/clients copy/clients.controller.js", "JavaScript", 0, 0, 70, 0, 0, 0, 1, 71
+"/Users/himanshusukhpal/Desktop/Program Files/Projects/seva/seva-backend/dist/app/controllers/clients/clients.controller.js", "JavaScript", 0, 0, 67, 0, 0, 0, 1, 68
+"/Users/himanshusukhpal/Desktop/Program Files/Projects/seva/seva-backend/dist/app/controllers/clients/services.controller.js", "JavaScript", 0, 0, 70, 0, 0, 0, 1, 71
+"/Users/himanshusukhpal/Desktop/Program Files/Projects/seva/seva-backend/dist/app/controllers/consumers/clients.controller.js", "JavaScript", 0, 0, 70, 0, 0, 0, 1, 71
+"/Users/himanshusukhpal/Desktop/Program Files/Projects/seva/seva-backend/dist/app/controllers/consumers/consumers.controller.js", "JavaScript", 0, 0, 67, 0, 0, 0, 1, 68
+"/Users/himanshusukhpal/Desktop/Program Files/Projects/seva/seva-backend/dist/app/controllers/invoices/invoices.controller.js", "JavaScript", 0, 0, 25, 0, 0, 2, 1, 28
+"/Users/himanshusukhpal/Desktop/Program Files/Projects/seva/seva-backend/dist/app/controllers/marketplace/marketplace.controller.js", "JavaScript", 0, 0, 1, 0, 0, 0, 1, 2
+"/Users/himanshusukhpal/Desktop/Program Files/Projects/seva/seva-backend/dist/app/controllers/produts/products.controller.js", "JavaScript", 0, 0, 25, 0, 0, 0, 1, 26
+"/Users/himanshusukhpal/Desktop/Program Files/Projects/seva/seva-backend/dist/app/controllers/services copy/services.controller.js", "JavaScript", 0, 0, 70, 0, 0, 0, 1, 71
+"/Users/himanshusukhpal/Desktop/Program Files/Projects/seva/seva-backend/dist/app/controllers/services/services.controller.js", "JavaScript", 0, 0, 67, 0, 0, 0, 1, 68
+"/Users/himanshusukhpal/Desktop/Program Files/Projects/seva/seva-backend/dist/app/controllers/templates/templates.controller.js", "JavaScript", 0, 0, 76, 0, 0, 0, 1, 77
+"/Users/himanshusukhpal/Desktop/Program Files/Projects/seva/seva-backend/dist/app/controllers/transactions/transactions.controller.js", "JavaScript", 0, 0, 135, 0, 0, 0, 1, 136
+"/Users/himanshusukhpal/Desktop/Program Files/Projects/seva/seva-backend/dist/app/middleware/auth.middleware.js", "JavaScript", 0, 0, 49, 0, 0, 0, 1, 50
+"/Users/himanshusukhpal/Desktop/Program Files/Projects/seva/seva-backend/dist/app/middleware/error-handler.middleware.js", "JavaScript", 0, 0, 18, 0, 0, 0, 1, 19
+"/Users/himanshusukhpal/Desktop/Program Files/Projects/seva/seva-backend/dist/app/middleware/validate-request.middleware.js", "JavaScript", 0, 0, 26, 0, 0, 0, 1, 27
+"/Users/himanshusukhpal/Desktop/Program Files/Projects/seva/seva-backend/dist/app/models/account/account.model.js", "JavaScript", 0, 0, 40, 0, 0, 3, 1, 44
+"/Users/himanshusukhpal/Desktop/Program Files/Projects/seva/seva-backend/dist/app/models/account/role.model.js", "JavaScript", 0, 0, 15, 0, 0, 0, 1, 16
+"/Users/himanshusukhpal/Desktop/Program Files/Projects/seva/seva-backend/dist/app/models/beneficiary/beneficiary.model.js", "JavaScript", 0, 0, 26, 0, 0, 0, 1, 27
+"/Users/himanshusukhpal/Desktop/Program Files/Projects/seva/seva-backend/dist/app/models/beneficiary/consumer.model.js", "JavaScript", 0, 0, 25, 0, 0, 0, 1, 26
+"/Users/himanshusukhpal/Desktop/Program Files/Projects/seva/seva-backend/dist/app/models/benificiary/consumer.model.js", "JavaScript", 0, 0, 25, 0, 0, 0, 1, 26
+"/Users/himanshusukhpal/Desktop/Program Files/Projects/seva/seva-backend/dist/app/models/client/client.model.js", "JavaScript", 0, 0, 26, 0, 0, 0, 1, 27
+"/Users/himanshusukhpal/Desktop/Program Files/Projects/seva/seva-backend/dist/app/models/client/designee.model.js", "JavaScript", 0, 0, 26, 0, 0, 0, 1, 27
+"/Users/himanshusukhpal/Desktop/Program Files/Projects/seva/seva-backend/dist/app/models/consumer copy/consumer.model.js", "JavaScript", 0, 0, 26, 0, 0, 0, 1, 27
+"/Users/himanshusukhpal/Desktop/Program Files/Projects/seva/seva-backend/dist/app/models/consumer/consumer.model.js", "JavaScript", 0, 0, 26, 0, 0, 0, 1, 27
+"/Users/himanshusukhpal/Desktop/Program Files/Projects/seva/seva-backend/dist/app/models/customer/consumer.model.js", "JavaScript", 0, 0, 26, 0, 0, 0, 1, 27
+"/Users/himanshusukhpal/Desktop/Program Files/Projects/seva/seva-backend/dist/app/models/customer/customer.model.js", "JavaScript", 0, 0, 26, 0, 0, 0, 1, 27
+"/Users/himanshusukhpal/Desktop/Program Files/Projects/seva/seva-backend/dist/app/models/delegate copy/delegate.model.js", "JavaScript", 0, 0, 26, 0, 0, 0, 1, 27
+"/Users/himanshusukhpal/Desktop/Program Files/Projects/seva/seva-backend/dist/app/models/delegate/delegate.model.js", "JavaScript", 0, 0, 26, 0, 0, 0, 1, 27
+"/Users/himanshusukhpal/Desktop/Program Files/Projects/seva/seva-backend/dist/app/models/delegate/designee.model.js", "JavaScript", 0, 0, 26, 0, 0, 0, 1, 27
+"/Users/himanshusukhpal/Desktop/Program Files/Projects/seva/seva-backend/dist/app/models/delegate/patron.model.js", "JavaScript", 0, 0, 1, 0, 0, 0, 1, 2
+"/Users/himanshusukhpal/Desktop/Program Files/Projects/seva/seva-backend/dist/app/models/desginee/designee.model.js", "JavaScript", 0, 0, 26, 0, 0, 0, 1, 27
+"/Users/himanshusukhpal/Desktop/Program Files/Projects/seva/seva-backend/dist/app/models/index.models.js", "JavaScript", 0, 0, 229, 0, 0, 37, 1, 267
+"/Users/himanshusukhpal/Desktop/Program Files/Projects/seva/seva-backend/dist/app/models/inventory/delegate.model.js", "JavaScript", 0, 0, 26, 0, 0, 0, 1, 27
+"/Users/himanshusukhpal/Desktop/Program Files/Projects/seva/seva-backend/dist/app/models/inventory/inventory.model.js", "JavaScript", 0, 0, 1, 0, 0, 0, 1, 2
+"/Users/himanshusukhpal/Desktop/Program Files/Projects/seva/seva-backend/dist/app/models/inventory/patron.model.js", "JavaScript", 0, 0, 1, 0, 0, 0, 1, 2
+"/Users/himanshusukhpal/Desktop/Program Files/Projects/seva/seva-backend/dist/app/models/inventory/payee.model.js", "JavaScript", 0, 0, 1, 0, 0, 0, 1, 2
+"/Users/himanshusukhpal/Desktop/Program Files/Projects/seva/seva-backend/dist/app/models/invoice/invoice-components.model.js", "JavaScript", 0, 0, 21, 0, 0, 1, 1, 23
+"/Users/himanshusukhpal/Desktop/Program Files/Projects/seva/seva-backend/dist/app/models/invoice/invoice.model.js", "JavaScript", 0, 0, 32, 0, 0, 1, 1, 34
+"/Users/himanshusukhpal/Desktop/Program Files/Projects/seva/seva-backend/dist/app/models/products/product.model.js", "JavaScript", 0, 0, 26, 0, 0, 0, 1, 27
+"/Users/himanshusukhpal/Desktop/Program Files/Projects/seva/seva-backend/dist/app/models/services/service.model.js", "JavaScript", 0, 0, 26, 0, 0, 0, 1, 27
+"/Users/himanshusukhpal/Desktop/Program Files/Projects/seva/seva-backend/dist/app/models/template/template.model.js", "JavaScript", 0, 0, 25, 0, 0, 0, 1, 26
+"/Users/himanshusukhpal/Desktop/Program Files/Projects/seva/seva-backend/dist/app/models/transaction/transaction.model.js", "JavaScript", 0, 0, 35, 0, 0, 1, 1, 37
+"/Users/himanshusukhpal/Desktop/Program Files/Projects/seva/seva-backend/dist/app/services/accounts.service.js", "JavaScript", 0, 0, 14, 0, 0, 0, 1, 15
+"/Users/himanshusukhpal/Desktop/Program Files/Projects/seva/seva-backend/dist/app/services/base.service.js", "JavaScript", 0, 0, 14, 0, 0, 0, 1, 15
+"/Users/himanshusukhpal/Desktop/Program Files/Projects/seva/seva-backend/dist/app/services/clients.service copy.js", "JavaScript", 0, 0, 34, 0, 0, 0, 1, 35
+"/Users/himanshusukhpal/Desktop/Program Files/Projects/seva/seva-backend/dist/app/services/clients.service.js", "JavaScript", 0, 0, 45, 0, 0, 0, 1, 46
+"/Users/himanshusukhpal/Desktop/Program Files/Projects/seva/seva-backend/dist/app/services/consumers.service.js", "JavaScript", 0, 0, 45, 0, 0, 0, 1, 46
+"/Users/himanshusukhpal/Desktop/Program Files/Projects/seva/seva-backend/dist/app/services/invoice.service..js", "JavaScript", 0, 0, 47, 0, 0, 0, 1, 48
+"/Users/himanshusukhpal/Desktop/Program Files/Projects/seva/seva-backend/dist/app/services/mail.service.js", "JavaScript", 0, 0, 1, 0, 0, 0, 1, 2
+"/Users/himanshusukhpal/Desktop/Program Files/Projects/seva/seva-backend/dist/app/services/response.service.js", "JavaScript", 0, 0, 40, 0, 0, 0, 1, 41
+"/Users/himanshusukhpal/Desktop/Program Files/Projects/seva/seva-backend/dist/app/services/services.service copy.js", "JavaScript", 0, 0, 34, 0, 0, 0, 1, 35
+"/Users/himanshusukhpal/Desktop/Program Files/Projects/seva/seva-backend/dist/app/services/services.service.js", "JavaScript", 0, 0, 45, 0, 0, 0, 1, 46
+"/Users/himanshusukhpal/Desktop/Program Files/Projects/seva/seva-backend/dist/app/services/templates.service.js", "JavaScript", 0, 0, 21, 0, 0, 0, 1, 22
+"/Users/himanshusukhpal/Desktop/Program Files/Projects/seva/seva-backend/dist/app/services/token.service.js", "JavaScript", 0, 0, 17, 0, 0, 0, 1, 18
+"/Users/himanshusukhpal/Desktop/Program Files/Projects/seva/seva-backend/dist/app/services/transaction.service.js", "JavaScript", 0, 0, 74, 0, 0, 0, 1, 75
+"/Users/himanshusukhpal/Desktop/Program Files/Projects/seva/seva-backend/dist/server.js", "JavaScript", 0, 0, 6, 0, 0, 0, 1, 7
+"/Users/himanshusukhpal/Desktop/Program Files/Projects/seva/seva-backend/lambda.js", "JavaScript", 0, 0, 14, 0, 0, 0, 1, 15
+"/Users/himanshusukhpal/Desktop/Program Files/Projects/seva/seva-backend/package-lock.json", "JSON", 0, 5193, 0, 0, 0, 0, 1, 5194
+"/Users/himanshusukhpal/Desktop/Program Files/Projects/seva/seva-backend/package.json", "JSON", 0, 52, 0, 0, 0, 0, 1, 53
+"/Users/himanshusukhpal/Desktop/Program Files/Projects/seva/seva-backend/src/app.ts", "TypeScript", 25, 0, 0, 0, 0, 3, 18, 46
+"/Users/himanshusukhpal/Desktop/Program Files/Projects/seva/seva-backend/src/app/config/auth.config.ts", "TypeScript", 3, 0, 0, 0, 0, 0, 1, 4
+"/Users/himanshusukhpal/Desktop/Program Files/Projects/seva/seva-backend/src/app/config/db.config.ts", "TypeScript", 32, 0, 0, 0, 0, 12, 12, 56
+"/Users/himanshusukhpal/Desktop/Program Files/Projects/seva/seva-backend/src/app/controllers/account/account.controller.ts", "TypeScript", 21, 0, 0, 0, 0, 0, 8, 29
+"/Users/himanshusukhpal/Desktop/Program Files/Projects/seva/seva-backend/src/app/controllers/authorize/authorize.controller.ts", "TypeScript", 71, 0, 0, 0, 0, 11, 12, 94
+"/Users/himanshusukhpal/Desktop/Program Files/Projects/seva/seva-backend/src/app/middleware/auth.middleware.ts", "TypeScript", 38, 0, 0, 0, 0, 0, 9, 47
+"/Users/himanshusukhpal/Desktop/Program Files/Projects/seva/seva-backend/src/app/middleware/error-handler.middleware.ts", "TypeScript", 15, 0, 0, 0, 0, 0, 2, 17
+"/Users/himanshusukhpal/Desktop/Program Files/Projects/seva/seva-backend/src/app/middleware/validate-request.middleware.ts", "TypeScript", 27, 0, 0, 0, 0, 0, 2, 29
+"/Users/himanshusukhpal/Desktop/Program Files/Projects/seva/seva-backend/src/app/migrations/20220819114536-create-check.js", "JavaScript", 0, 0, 27, 0, 0, 0, 1, 28
+"/Users/himanshusukhpal/Desktop/Program Files/Projects/seva/seva-backend/src/app/models/account/account.model.ts", "TypeScript", 38, 0, 0, 0, 0, 3, 3, 44
+"/Users/himanshusukhpal/Desktop/Program Files/Projects/seva/seva-backend/src/app/models/account/role.model.ts", "TypeScript", 13, 0, 0, 0, 0, 0, 2, 15
+"/Users/himanshusukhpal/Desktop/Program Files/Projects/seva/seva-backend/src/app/models/index.models.ts", "TypeScript", 7, 0, 0, 0, 0, 0, 6, 13
+"/Users/himanshusukhpal/Desktop/Program Files/Projects/seva/seva-backend/src/app/services/base.service.ts", "TypeScript", 8, 0, 0, 0, 0, 0, 4, 12
+"/Users/himanshusukhpal/Desktop/Program Files/Projects/seva/seva-backend/src/app/services/mail.service.ts", "TypeScript", 0, 0, 0, 0, 0, 0, 1, 1
+"/Users/himanshusukhpal/Desktop/Program Files/Projects/seva/seva-backend/src/app/services/response.service.ts", "TypeScript", 35, 0, 0, 0, 0, 0, 9, 44
+"/Users/himanshusukhpal/Desktop/Program Files/Projects/seva/seva-backend/src/app/services/token.service.ts", "TypeScript", 10, 0, 0, 0, 0, 0, 5, 15
+"/Users/himanshusukhpal/Desktop/Program Files/Projects/seva/seva-backend/src/app/templates/school/en.json", "JSON", 0, 3, 0, 0, 0, 0, 0, 3
+"/Users/himanshusukhpal/Desktop/Program Files/Projects/seva/seva-backend/src/server.ts", "TypeScript", 4, 0, 0, 0, 0, 0, 1, 5
+"/Users/himanshusukhpal/Desktop/Program Files/Projects/seva/seva-backend/tsconfig.json", "JSON with Comments", 0, 0, 0, 0, 16, 85, 9, 110
+"Total", "-", 347, 5259, 2507, 7, 16, 196, 174, 8506
