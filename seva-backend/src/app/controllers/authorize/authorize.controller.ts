@@ -10,6 +10,8 @@ import { validateRequest } from '../../middleware/validate-request.middleware';
 
 import { TokenService } from '../../services/token.service';
 
+import { Op } from 'sequelize';
+
 const tokens = new TokenService();
 const respond = new ResponseService();
 
@@ -67,18 +69,18 @@ export class AuthController {
       if (
         await db.accounts.findOne({
           where: {
-            pan: 'ABCCS2085B'
+            [Op.or]: [
+              { email: 'himanshu.sukhpal@yahoo.com' },
+              { phone: '9899803166' }
+            ]
           }
         })
       ) throw Error('Account already exists');
       const masterAccount = {
-        name: 'Synans (OPC) Pvt Ltd',
-        email: 'admin@synans.com',
-        pan: 'ABCCS2085B',
+        name: 'Himanshu Sukhpal',
+        email: 'himanshu.sukhpal@yahoo.com',
+        phone: '9899803166',
         passwordHash: await bcrypt.hash('P@SS123', 10),
-        type: 'enterprise',
-        rightsLevel: 1,
-        code: 'SYN',
         status: true,
         createdBy: 0,
         updatedBy: 0

@@ -43,7 +43,7 @@ db.sequelize = sequelize;
 // Initialize ModelsS
 db = indexModels(db);
 
-db.sequelize.sync()
+db.sequelize.sync({ alter: true })
   .then(() => {
     console.log('Synced db.');
   })
