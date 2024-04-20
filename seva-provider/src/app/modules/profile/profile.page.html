@@ -10,4 +10,12 @@
       <ion-title size="large">Profile</ion-title>
     </ion-toolbar>
   </ion-header>
+
+  <ion-list class="transparent-list">
+    <ion-item lines="none" (click)="appservice.logout()">
+      <ion-button slot="end" fill="undefined">
+        <ion-icon slot="icon-only" name="power"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-list>
 </ion-content>

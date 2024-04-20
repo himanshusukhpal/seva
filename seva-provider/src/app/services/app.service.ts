@@ -39,6 +39,7 @@ export class AppService {
   isLoggedIn: boolean = false;
   tokenRefreshed = false;
   failedCalls: failedCall[] = [];
+  title = 'Seva';
 
   constructor(
     public router: Router,
@@ -174,7 +175,7 @@ export class AppService {
   dismissLoading = async () => (document.getElementsByTagName('ion-loading').length)? await this.loadCtrl.dismiss() : null;
 
   navRootForward = (path: string) => this.nav.navigateRoot(path, { animated: true, animationDirection: 'forward' });
-  navRootBack = (path: string) => {console.log('hot');this.nav.navigateRoot(path, { animated: true, animationDirection: 'back' });}
+  navRootBack = (path: string) => this.nav.navigateRoot(path, { animated: true, animationDirection: 'back' });
 
   getUserFromUrlParams() {
     // const token = window.location.href.split('&userdata')[0].split('token=')[1];

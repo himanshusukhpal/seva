@@ -29,7 +29,7 @@ app.use(urlencoded({ extended: true }));
 
 // simple route
 app.get('/', (_req, res) => {
-  res.send('Welcome to EMP api.');
+  res.send('Welcome to Seva api.');
 });
 
 app.use('/api/auth', (new AuthController()).router);
@@ -38,7 +38,7 @@ app.all('/api/*', (new AuthMiddleware()).verifyAccountAccess);
 
 app.use('/api/account', (new AccountController()).router);
 
-app.all('/api/admin/*', (new AuthMiddleware()).verifySuperAdminAccountAccess);
+// app.all('/api/admin/*', (new AuthMiddleware()).verifySuperAdminAccountAccess);
 
 app.use(errorHandler);
 

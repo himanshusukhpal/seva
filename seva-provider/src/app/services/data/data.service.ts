@@ -37,10 +37,14 @@ export class DataService {
     return new Date().getTime() / 1000 | 0;
   }
 
-  async initUserSession(user: Record<string, any>) {
+  async initUserSession(user: Record<string, any>, fetch = true) {
     try {
       await this.setUserData(user);
       await this.initializeAppData();
+      if(fetch) {
+        const response: Record<string, any> = await lastValueFrom(this.calls.myAccountCall());
+        await this.setUserData(Object.assign({}, user, response['data']));
+      }
     } catch(e) {
       console.log(e)
       this.crashlytics.recordException(e);

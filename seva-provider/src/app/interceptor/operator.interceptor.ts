@@ -73,7 +73,7 @@ export class OperatorInterceptor implements HttpInterceptor {
       headers = headers.append('Appversion',this.appservice.appSemanticVersion);
     }
     if(this.user?.['accessToken']) {
-      headers = headers.append('Authorization', `Bearer ${this.user['accessToken']}`);
+      headers = headers.append('x-access-token', this.user['accessToken']);
     }
     clone = clone.clone({
       headers

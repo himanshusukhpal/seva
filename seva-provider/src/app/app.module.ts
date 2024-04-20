@@ -7,7 +7,6 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
-
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
@@ -17,6 +16,8 @@ import { OperatorInterceptor } from './interceptor/operator.interceptor';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
+
+import { AppService } from './services/app.service';
 
 @NgModule({
   declarations: [
@@ -49,4 +50,11 @@ export function HttpLoaderFactory(http: HttpClient) {
   bootstrap: [AppComponent]
 })
 
-export class AppModule {}
+export class AppModule {
+  constructor(
+    private appservice: AppService
+  ) {
+    this.appservice.initialize();
+    this.appservice.checkUserExist();
+  }
+}

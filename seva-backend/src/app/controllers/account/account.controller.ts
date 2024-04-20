@@ -12,12 +12,13 @@ export class AccountController {
 
   constructor(
   ) {
-    this.router.get('/', this.getAccount);
+    this.router.get('/:type', this.getAccount);
   }
 
   async getAccount(req: Request, res: Response, next: NextFunction) {
     try {
-      const account = await baseService.getAccountById(req.headers.accountId as string);
+      let account;
+      if(req.params.type==='provider') account = await baseService.getProviderById(req.headers.accountId as string);
       respond.success(res, 'Account Fetched', account);
     } catch (e) {
       if((e as any).message==='Account Not Found') respond.unauthorized(res);

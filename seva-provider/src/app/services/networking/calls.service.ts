@@ -2,9 +2,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { Observable } from 'rxjs/internal/Observable';
-import { of } from 'rxjs/internal/observable/of';
-
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -12,10 +9,10 @@ import { environment } from 'src/environments/environment';
 })
 export class CallsService {
 
-  baseUrl = environment.serverUrl;
+  baseUrl = environment.serverUrl + '/api';
 
   constructor(
-    private httpClient: HttpClient,
+    private http: HttpClient,
   ) { }
 
   // validate(call: Observable<object>, responseSchema) {
@@ -27,5 +24,9 @@ export class CallsService {
   //     })
   //   );
   // }
+
+  loginCall = (payload: Record<string, any>) => this.http.post(`${this.baseUrl}/auth/provider/sign/in`, payload);
+
+  myAccountCall = () => this.http.get(`${this.baseUrl}/account/provider`);
 
 }

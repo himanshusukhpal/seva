@@ -1,25 +1,23 @@
 import { Model, DataTypes, Sequelize } from 'sequelize';
 
-export function initAccount (sequelize: Sequelize) {
-  class account extends Model { }
-  account.init(
+export function initProvider (sequelize: Sequelize) {
+  class provider extends Model { }
+  provider.init(
     {
       name: { type: DataTypes.STRING, allowNull: false },
-      email: { type: DataTypes.STRING, allowNull: false },
       phone: { type: DataTypes.STRING, allowNull: false },
-      passwordHash: { type: DataTypes.STRING, allowNull: false },
       status: { type: DataTypes.BOOLEAN, allowNull: false },
       createdBy: { type: DataTypes.INTEGER, allowNull: false },
       updatedBy: { type: DataTypes.INTEGER, allowNull: false }
     },
     {
       sequelize,
-      defaultScope: {
+      // defaultScope: {
         // exclude password hash by default
-        attributes: {
-          exclude: ['passwordHash']
-        }
-      },
+        // attributes: {
+        //   exclude: ['passwordHash']
+        // }
+      // },
       scopes: {
         active: {
           where: {
@@ -27,14 +25,14 @@ export function initAccount (sequelize: Sequelize) {
           }
         },
         // include hash with this scope
-        withHash: {
-          attributes: {
-            include: ['passwordHash']
-          }
-        }
+        // withHash: {
+        //   attributes: {
+        //     include: ['passwordHash']
+        //   }
+        // }
       }
     }
   );
 
-  return account;
+  return provider;
 }

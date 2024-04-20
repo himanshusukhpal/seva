@@ -1,12 +1,12 @@
-import { initAccount } from './account/account.model';
+import { initProvider } from './provider/provider.model';
 
 export function indexModels (db: Record<string, any>) {
   
   const sequelize = db.sequelize;
 
-  const Account = initAccount(sequelize);
+  const Provider = initProvider(sequelize);
 
-  db.accounts = Account;
+  db.providers = Provider;
 
   return db;
 }

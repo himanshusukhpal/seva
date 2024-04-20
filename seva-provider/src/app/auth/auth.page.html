@@ -1,13 +1,36 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>auth</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">auth</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <div class="container-center ion-text-center">
+    <ion-icon name="home-outline" style="font-size: 70px;"></ion-icon>
+    <br/>
+    <span style="font-size: 30px;">{{ appservice.title }}</span>
+    <br/>
+    <span style="font-size: 20px;">Life made easy!</span>
+  </div>
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar style="padding: 15px 5px 10px 5px;">
+    <ion-title>
+      &nbsp; Get Started with {{ appservice.title }}
+      <form [formGroup]="loginForm" (ngSubmit)="submitLogin()">
+        <ion-list>
+          <ion-item style="--padding-start: 10px; margin: 10px auto;">
+            <ion-input
+              errorText="Mobile no. is required"
+              label="+91"
+              placeholder="Enter your mobile number"
+              formControlName="phone"
+            ></ion-input>
+            <ion-button
+              slot="end"
+              type="submit"
+              [disabled]="!loginForm.valid"
+            >
+              <ion-icon slot="icon-only" name="arrow-forward"></ion-icon>
+            </ion-button>
+          </ion-item>
+        </ion-list>
+      </form>
+    </ion-title>
+  </ion-toolbar>
+</ion-footer>
