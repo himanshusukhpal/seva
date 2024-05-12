@@ -15,10 +15,8 @@ export class AuthMiddleware {
   async verifyAccountAccess (req: Request, res: Response, next: NextFunction) {
     try {
       const token = req.headers['x-access-token'];
-      console.log(token);
       if (token && typeof token === 'string') {
         jwt.verify(token, authConfig.secret, async (err, decoded) => {
-          console.log(decoded);
           if (err) respond.unauthorized(res, (err.message==='jwt expired'?'Session expired':err.message));
           else if (
             decoded &&

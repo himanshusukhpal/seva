@@ -4,10 +4,10 @@
   "description": "",
   "main": "dist/app.js",
   "scripts": {
-    "build": "npx tsc",
+    "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint ./src/app --fix",
-    "serve": "concurrently \"npx tsc --watch\" \"nodemon -q ./dist/server.js\"",
+    "serve": "concurrently \"tsc --watch\" \"nodemon -q ./dist/server.js\"",
     "start": "node dist/server.js"
   },
   "repository": {
