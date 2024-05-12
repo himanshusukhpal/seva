@@ -14,7 +14,10 @@ const app = express();
 const PORT = process.env.PORT || 8090;
 
 const corsOption = {
-  origin: 'http://localhost:8100'
+  origin: [
+    'http://localhost:8100',
+    'https://seva-provider.synans.com'
+  ]
 };
 
 app.use(cors(corsOption));

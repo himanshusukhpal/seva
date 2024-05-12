@@ -1,3 +1,3 @@
 RewriteEngine on
 RewriteCond %{REQUEST_URI} !=/api/start.php
-RewriteRule  ^(.*) http://localhost:8100/api/$1  [P,L]
+RewriteRule  ^(.*) http://localhost:8090/api/$1  [P,L]

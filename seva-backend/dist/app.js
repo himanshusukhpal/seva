@@ -39,7 +39,10 @@ exports.app = app;
 const PORT = process.env.PORT || 8090;
 exports.PORT = PORT;
 const corsOption = {
-    origin: 'http://localhost:8100'
+    origin: [
+        'http://localhost:8100',
+        'https://seva-provider.synans.com'
+    ]
 };
 app.use((0, cors_1.default)(corsOption));
 app.use((0, cookie_parser_1.default)());
