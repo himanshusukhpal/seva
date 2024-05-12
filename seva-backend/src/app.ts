@@ -11,7 +11,7 @@ import { AccountController } from './app/controllers/account/account.controller'
 
 const app = express();
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 8090;
 
 const corsOption = {
   origin: 'http://localhost:8100'

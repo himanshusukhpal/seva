@@ -36,7 +36,7 @@ const authorize_controller_1 = require("./app/controllers/authorize/authorize.co
 const account_controller_1 = require("./app/controllers/account/account.controller");
 const app = (0, express_1.default)();
 exports.app = app;
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 8090;
 exports.PORT = PORT;
 const corsOption = {
     origin: 'http://localhost:8100'
