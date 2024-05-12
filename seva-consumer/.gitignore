@@ -19,7 +19,6 @@ package-lock.json
 
 # Ionic
 /.ionic
-/www
 /platforms
 /plugins
 

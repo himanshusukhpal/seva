@@ -1,6 +1,6 @@
 <?php
   try {
-    $scriptFile = "./run-seva-backend-script.sh";
+    $scriptFile = "./run-seva-backend.sh";
     exec("/bin/bash ".$scriptFile, $output, $ret_code);
     $response = [
      "status" => "success",
