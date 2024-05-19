@@ -21,6 +21,7 @@ package-lock.json
 /.ionic
 /platforms
 /plugins
+/www
 
 # Compiled output
 /dist

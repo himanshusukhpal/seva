@@ -12,6 +12,6 @@ if [[ "$response" == "$EXPECTED_CODE" ]]; then
 else
   # Start the API if not running
   cd ../seva-backend;
-  ~/.nvm/versions/node/v18.16.0/bin/node dist/server.js > ../seva-backend.log 2> ../seva-backend-error.log;
+  ~/.nvm/versions/node/v18.16.0/bin/node deploy/server.js > ../seva-backend.log 2> ../seva-backend-error.log;
   echo "Seva API started";
 fi

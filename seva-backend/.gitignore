@@ -23,6 +23,7 @@ package-lock.json
 /www
 /platforms
 /plugins
+/dist
 
 # Compiled output
 /tmp

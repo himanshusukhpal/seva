@@ -1,5 +1,5 @@
 <IfModule mod_rewrite.c>
   RewriteEngine on
   RewriteRule ^api - [L]
-  RewriteRule ^(.*) ./seva-consumer/www/$1 [L]
+  RewriteRule ^(.*) ./seva-consumer/deploy/$1 [L]
 </IfModule>
