@@ -39,7 +39,7 @@ export class AppService {
   isLoggedIn: boolean = false;
   tokenRefreshed = false;
   failedCalls: failedCall[] = [];
-  title = 'Seva Provider';
+  title = 'Seva';
 
   constructor(
     public router: Router,

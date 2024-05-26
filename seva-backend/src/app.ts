@@ -6,8 +6,11 @@ import { errorHandler } from './app/middleware/error-handler.middleware';
 
 import { AuthMiddleware } from './app/middleware/auth.middleware';
 
-import { AuthController } from './app/controllers/authorize/authorize.controller';
-import { AccountController } from './app/controllers/account/account.controller';
+import { ProviderAuthController } from './app/controllers/provider/authorize/provider-authorize.controller';
+import { ProviderAccountController } from './app/controllers/provider/account/provider-account.controller';
+
+import { ConsumerAuthController } from './app/controllers/consumer/authorize/consumer-authorize.controller';
+import { ConsumerAccountController } from './app/controllers/consumer/account/consumer-account.controller';
 
 const app = express();
 
@@ -16,9 +19,11 @@ const PORT = process.env.PORT || 8090;
 const corsOption = {
   origin: [
     'http://localhost:8100',
-    'https://seva-provider.synans.com'
+    'http://localhost:8101'
   ]
 };
+
+const apiRouter = express.Router();
 
 app.use(cors(corsOption));
 
@@ -35,13 +40,17 @@ app.get('/', (_req, res) => {
   res.send('Welcome to Seva api.');
 });
 
-app.use('/api/auth', (new AuthController()).router);
+app.use('/api/auth', (new ConsumerAuthController()).router);
 
-app.all('/api/*', (new AuthMiddleware()).verifyAccountAccess);
+app.use('/api/provider/auth', (new ProviderAuthController()).router);
 
-app.use('/api/account', (new AccountController()).router);
+apiRouter.use((req, res, next) => {
+  (new AuthMiddleware()).verifyAccountAccess(req, res, next);
+});
+apiRouter.use('/account', (new ConsumerAccountController()).router);
+apiRouter.use('/provider/account', (new ProviderAccountController()).router);
 
-// app.all('/api/admin/*', (new AuthMiddleware()).verifySuperAdminAccountAccess);
+app.use('/api', apiRouter);
 
 app.use(errorHandler);
 

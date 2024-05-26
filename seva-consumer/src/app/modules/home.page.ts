@@ -7,10 +7,13 @@ import { AppService } from '../services/app.service';
   templateUrl: './home.page.html',
   styleUrls: ['./home.page.scss'],
 })
-export class HomePage {
+export class HomePage implements OnInit {
 
   constructor(
     public appservice: AppService
   ) { }
+
+  ngOnInit() {
+  }
 
 }

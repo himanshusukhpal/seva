@@ -4,9 +4,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { ProfilePageRoutingModule } from './profile-routing.module';
+import { AuthPageRoutingModule } from './auth-routing.module';
 
-import { ProfilePage } from './profile.page';
+import { AuthPage } from './auth.page';
 
 @NgModule({
   imports: [
@@ -14,8 +14,8 @@ import { ProfilePage } from './profile.page';
     FormsModule,
     ReactiveFormsModule,
     IonicModule,
-    ProfilePageRoutingModule
+    AuthPageRoutingModule
   ],
-  declarations: [ProfilePage]
+  declarations: [AuthPage]
 })
-export class ProfilePageModule {}
+export class AuthPageModule {}

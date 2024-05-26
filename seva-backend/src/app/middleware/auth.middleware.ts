@@ -26,9 +26,9 @@ export class AuthMiddleware {
             req.headers.accountId = decoded.accountId
             next();
           }
-          else respond.forbidden(res, 'Access Denied!');
+          else respond.forbidden(res);
         });
-      } else respond.forbidden(res, 'Access Denied!');
+      } else respond.forbidden(res);
     } catch (e: any) {
       respond.forbidden(res, e.message);
     }
@@ -36,7 +36,7 @@ export class AuthMiddleware {
 
   async verifySuperAdminAccountAccess (req: Request, res: Response, next: NextFunction) {
     try {
-      if(req.headers.accountId?.toString()!==(1).toString()) respond.forbidden(res, 'Access Denied!');
+      if(req.headers.accountId?.toString()!==(1).toString()) respond.forbidden(res);
       next();
     } catch (e: any) {
       respond.forbidden(res, e.message);

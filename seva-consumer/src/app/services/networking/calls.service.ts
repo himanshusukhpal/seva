@@ -9,7 +9,7 @@ import { environment } from 'src/environments/environment';
 })
 export class CallsService {
 
-  baseUrl = environment.serverUrl + '/api/provider';
+  baseUrl = environment.serverUrl + '/api';
 
   constructor(
     private http: HttpClient,
@@ -28,7 +28,5 @@ export class CallsService {
   loginCall = (payload: Record<string, any>) => this.http.post(`${this.baseUrl}/auth/sign/in`, payload);
 
   myAccountCall = () => this.http.get(`${this.baseUrl}/account`);
-
-  // updateAccount = ()
 
 }
