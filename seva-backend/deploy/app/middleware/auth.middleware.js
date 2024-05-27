@@ -25,11 +25,11 @@ class AuthMiddleware {
                         next();
                     }
                     else
-                        respond.forbidden(res, 'Access Denied!');
+                        respond.forbidden(res);
                 });
             }
             else
-                respond.forbidden(res, 'Access Denied!');
+                respond.forbidden(res);
         }
         catch (e) {
             respond.forbidden(res, e.message);
@@ -38,7 +38,7 @@ class AuthMiddleware {
     async verifySuperAdminAccountAccess(req, res, next) {
         try {
             if (req.headers.accountId?.toString() !== (1).toString())
-                respond.forbidden(res, 'Access Denied!');
+                respond.forbidden(res);
             next();
         }
         catch (e) {

@@ -1,15 +1,18 @@
-import { initConsumer } from './consumer/consumer.model';
-import { initProvider } from './provider/provider.model';
+import { initAccount } from "./account/account.model";
+import { initProviderDetail } from "./provider/provider-detail.model";
 
 export function indexModels (db: Record<string, any>) {
   
   const sequelize = db.sequelize;
 
-  const Provider = initProvider(sequelize);
-  const Consumer = initConsumer(sequelize);
+  const Account = initAccount(sequelize);
+  const ProviderDetail = initProviderDetail(sequelize);
 
-  db.providers = Provider;
-  db.consumers = Consumer;
+  Account.hasMany(ProviderDetail, { foreignKey: 'accountId' });
+  ProviderDetail.belongsTo(Account, { foreignKey: 'accountId' });
+
+  db.accounts = Account;
+  db.providerDetails = ProviderDetail;
 
   return db;
 }

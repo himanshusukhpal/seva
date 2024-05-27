@@ -41,9 +41,10 @@ exports.PORT = PORT;
 const corsOption = {
     origin: [
         'http://localhost:8100',
-        'https://seva-provider.synans.com'
+        'http://localhost:8101'
     ]
 };
+const apiRouter = express_1.default.Router();
 app.use((0, cors_1.default)(corsOption));
 app.use((0, cookie_parser_1.default)());
 // parse requests of content-type - application/json
@@ -55,7 +56,9 @@ app.get('/', (_req, res) => {
     res.send('Welcome to Seva api.');
 });
 app.use('/api/auth', (new authorize_controller_1.AuthController()).router);
-app.all('/api/*', (new auth_middleware_1.AuthMiddleware()).verifyAccountAccess);
-app.use('/api/account', (new account_controller_1.AccountController()).router);
-// app.all('/api/admin/*', (new AuthMiddleware()).verifySuperAdminAccountAccess);
+apiRouter.use((req, res, next) => {
+    (new auth_middleware_1.AuthMiddleware()).verifyAccountAccess(req, res, next);
+});
+apiRouter.use('/account', (new account_controller_1.AccountController()).router);
+app.use('/api', apiRouter);
 app.use(error_handler_middleware_1.errorHandler);

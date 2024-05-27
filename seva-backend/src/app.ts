@@ -6,11 +6,8 @@ import { errorHandler } from './app/middleware/error-handler.middleware';
 
 import { AuthMiddleware } from './app/middleware/auth.middleware';
 
-import { ProviderAuthController } from './app/controllers/provider/authorize/provider-authorize.controller';
-import { ProviderAccountController } from './app/controllers/provider/account/provider-account.controller';
-
-import { ConsumerAuthController } from './app/controllers/consumer/authorize/consumer-authorize.controller';
-import { ConsumerAccountController } from './app/controllers/consumer/account/consumer-account.controller';
+import { AuthController } from './app/controllers/authorize/authorize.controller';
+import { AccountController } from './app/controllers/account/account.controller';
 
 const app = express();
 
@@ -40,15 +37,12 @@ app.get('/', (_req, res) => {
   res.send('Welcome to Seva api.');
 });
 
-app.use('/api/auth', (new ConsumerAuthController()).router);
-
-app.use('/api/provider/auth', (new ProviderAuthController()).router);
+app.use('/api/auth', (new AuthController()).router);
 
 apiRouter.use((req, res, next) => {
   (new AuthMiddleware()).verifyAccountAccess(req, res, next);
 });
-apiRouter.use('/account', (new ConsumerAccountController()).router);
-apiRouter.use('/provider/account', (new ProviderAccountController()).router);
+apiRouter.use('/account', (new AccountController()).router);
 
 app.use('/api', apiRouter);
 
