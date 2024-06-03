@@ -25,8 +25,12 @@ export class CallsService {
   //   );
   // }
 
+  apiColdStartCall = () => this.http.get(`${this.baseUrl}/start.php`);
+
   loginCall = (payload: Record<string, any>) => this.http.post(`${this.baseUrl}/auth/sign`, payload);
 
   myAccountCall = () => this.http.get(`${this.baseUrl}/account`);
+
+  updateMyAccountCall = (payload: Record<string, any>) => this.http.post(`${this.baseUrl}/account`, payload);
 
 }

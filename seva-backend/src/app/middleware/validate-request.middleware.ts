@@ -5,7 +5,7 @@ export function validateRequest(
   res: Response,
   next:NextFunction,
   schema: any,
-  unknown: 'allowUnknown' | 'stripUnknown' = 'allowUnknown'
+  unknown: 'allowUnknown' | 'stripUnknown' = 'stripUnknown'
 ) {
   try {
     const options: Record<string, any> = {

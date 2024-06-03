@@ -40,6 +40,7 @@ export class AppService {
   tokenRefreshed = false;
   failedCalls: failedCall[] = [];
   title = 'Seva';
+  attemptedApiInit = false;
 
   constructor(
     public router: Router,
@@ -71,11 +72,18 @@ export class AppService {
   initialize() {
     this.setCurrentNetworkStatus();
     this.resetAppListeners();
+    this.attemptApiColdStart();
     // this.initTranslate();
   }
 
   setCurrentNetworkStatus() {
     Network.getStatus().then(status=>this.data.connected.next(status.connected));
+  }
+  attemptApiColdStart() {
+    if(environment.production && !this.attemptedApiInit) {
+      this.attemptedApiInit = true;
+      this.calls.apiColdStartCall().subscribe();
+    }
   }
   resetAppListeners() {
     App.removeAllListeners();

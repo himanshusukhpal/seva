@@ -27,17 +27,23 @@
       </ion-item>
       <ion-item lines="none">
         <ion-input
-          label="Phone"
-          [disabled]="!!user?.['phone']"
-          formControlName="phone"
-          errorText="Valid phone is required"
+          label="D.O.B"
+          formControlName="dob"
+          errorText="Invalid DOB input"
         ></ion-input>
       </ion-item>
       <ion-item lines="none">
         <ion-input
-          label="D.O.B"
-          formControlName="dob"
-          errorText="Invalid DOB input"
+          label="Email"
+          formControlName="email"
+          errorText="Valid email is required"
+        ></ion-input>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-input
+          label="Phone"
+          formControlName="phone"
+          errorText="Valid phone is required"
         ></ion-input>
       </ion-item>
       <ion-item lines="none">
@@ -54,26 +60,33 @@
           errorText="Invalid pan input"
         ></ion-input>
       </ion-item>
-      <ion-item lines="none">
-        <ion-input
-          label="Emergency Contact Name"
-          formControlName="emergencyContactName"
-          errorText="Invalid emergency contact name"
-        ></ion-input>
-      </ion-item>
-      <ion-item lines="none">
-        <ion-input
-          label="Emergency Contact Phone"
-          formControlName="emergencyContactPhone"
-          errorText="Invalid emergency contact number"
-        ></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-button expand="block" type="submit">
-          Update
-        </ion-button>
-      </ion-item>
     </ion-list>
+    <fieldset style="margin: 0 10px 0 10px">
+      <legend>Emergency Contact</legend>
+      <ion-list>
+        <ion-item lines="none">
+          <ion-input
+            label="Name"
+            formControlName="emergencyContactName"
+            errorText="Invalid emergency contact name"
+          ></ion-input>
+        </ion-item>
+        <ion-item lines="none">
+          <ion-input
+            label="Phone"
+            formControlName="emergencyContactPhone"
+            errorText="Invalid emergency contact number"
+          ></ion-input>
+        </ion-item>
+      </ion-list>
+    </fieldset>
+    <ion-button
+      expand="block"
+      type="submit"
+      style="margin: 10px"
+    >
+      Update
+    </ion-button>
   </form>
 
 </ion-content>

@@ -3,15 +3,15 @@ import { NextFunction, Request, Response, Router } from 'express';
 import Joi from 'joi';
 // import bcrypt from 'bcryptjs';
 
-import { db } from '../../config/db.config';
-
 import { ResponseService } from '../../services/response.service';
 import { validateRequest } from '../../middleware/validate-request.middleware';
+import { AccountService } from '../../services/account.service';
 
 import { TokenService } from '../../services/token.service';
 
 const tokenService = new TokenService();
 const respond = new ResponseService();
+const accountService = new AccountService();
 
 export class AuthController {
   
@@ -30,17 +30,8 @@ export class AuthController {
   }
   async sign(req: Request, res: Response, next: NextFunction) {
     try {
-      let account = await db.accounts.findOne({ where: { phone: req.body.phone } });
-      if(!account) {
-        const newAccount = {
-          name: '',
-          phone: req.body.phone,
-          status: true,
-          createdBy: 0,
-          updatedBy: 0
-        };
-        account = await (new db.accounts(newAccount)).save();
-      }
+      let account = await accountService.getAccountByPhone(req.body.phone);
+      if(!account) account = await accountService.signUpAccount(req.body);
       const accessToken = tokenService.generateToken({ accountId: account.id });
       const date = new Date();
       date.setDate(date.getDate() + 1);

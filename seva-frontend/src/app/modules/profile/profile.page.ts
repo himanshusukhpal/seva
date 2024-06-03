@@ -1,6 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
-import { Subscription } from 'rxjs';
+import { UntypedFormBuilder, Validators } from '@angular/forms';
+
+import { Subscription } from 'rxjs/internal/Subscription';
+import { lastValueFrom } from 'rxjs/internal/lastValueFrom';
 
 import { AppService } from 'src/app/services/app.service';
 
@@ -13,9 +15,10 @@ export class ProfilePage implements OnInit, OnDestroy {
 
   profileForm = this.formBuilder.group({
     name: [ null, [Validators.required] ],
-    phone: [ {value: null, disabled: true}, [Validators.required] ],
-    dob: [ null, [Validators.required] ],
-    aadhar: [ null, [Validators.required] ],
+    dob: [ null ],
+    email: [ null ],
+    phone: [ null, [Validators.required] ],
+    aadhar: [ null ],
     pan: [ null ],
     emergencyContactName: [ null ],
     emergencyContactPhone: [ null ],
@@ -30,13 +33,19 @@ export class ProfilePage implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.appservice.data.sessionUser.subscribe(res=>this.user=res);
-    if(this.user) this.profileForm.patchValue(this.user);
+    if(this.user) {
+      this.profileForm.patchValue(this.user);
+      if(this.profileForm.value.phone) this.profileForm.controls['phone'].disable();
+    }
   }
 
   async updateProfileDetail() {
     try {
       if(!this.profileForm.valid) throw Error('Invalid form input');
-      // const response: Record<string, any> = await this.appservice.calls.
+      const response: Record<string, any> = await lastValueFrom(
+        this.appservice.calls.updateMyAccountCall(this.profileForm.value)
+      );
+      console.log(response);
     } catch(e) {
       await this.appservice.alert.showError('Update Profile', e);
     }
