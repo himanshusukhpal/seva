@@ -2,10 +2,24 @@
   <ion-toolbar>
     <ion-title>Profile</ion-title>
     <ion-buttons slot="end">
-      <ion-button fill="undefined" shape="round" (click)="appservice.logout()">
-        <ion-icon slot="icon-only" name="power"></ion-icon>
+      <ion-button fill="undefined" shape="round" id="profile-menu">
+        <ion-icon slot="icon-only" name="ellipsis-vertical"></ion-icon>
       </ion-button>
     </ion-buttons>
+    <ion-popover trigger="profile-menu" dismissOnSelect="true">
+      <ng-template>
+        <ion-list>
+          <ion-item (click)="appservice.logout()">
+            <ion-label slot="start">
+              <b>
+                Logout
+              </b>
+            </ion-label>
+            <ion-icon size="large" slot="end" name="power"></ion-icon>
+          </ion-item>
+        </ion-list>
+      </ng-template>
+    </ion-popover>
   </ion-toolbar>
 </ion-header>
 
@@ -16,7 +30,14 @@
     </ion-toolbar>
   </ion-header>
 
-  <form [formGroup]="profileForm" (ngSubmit)="updateProfileDetail()">
+  <ion-avatar class="profile-avatar">
+    <img alt="Profile" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+  </ion-avatar>
+
+  <form
+    [formGroup]="profileForm"
+    (ngSubmit)="updateProfileDetail()"
+  >
     <ion-list>
       <ion-item lines="none">
         <ion-input
@@ -25,12 +46,22 @@
           errorText="Valid name is required"
         ></ion-input>
       </ion-item>
-      <ion-item lines="none">
-        <ion-input
-          label="D.O.B"
-          formControlName="dob"
-          errorText="Invalid DOB input"
-        ></ion-input>
+      <ion-item class="item-padded">
+        <span slot="start">
+          D.O.B
+        </span>
+        <ion-datetime-button
+          datetime="dob-datetime"
+        ></ion-datetime-button>
+        <ion-modal [keepContentsMounted]="true">
+          <ng-template>
+            <ion-datetime
+              id="dob-datetime"
+              presentation="date"
+              formControlName="dob"
+            ></ion-datetime>
+          </ng-template>
+        </ion-modal>
       </ion-item>
       <ion-item lines="none">
         <ion-input

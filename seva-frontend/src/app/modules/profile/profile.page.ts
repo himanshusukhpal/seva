@@ -25,6 +25,7 @@ export class ProfilePage implements OnInit, OnDestroy {
   });
   subscriptions: Subscription[] = [];
   user?: Record<string, any> | null;
+  editingProfile = false;
 
   constructor(
     public appservice: AppService,
@@ -32,20 +33,26 @@ export class ProfilePage implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit() {
-    this.appservice.data.sessionUser.subscribe(res=>this.user=res);
-    if(this.user) {
-      this.profileForm.patchValue(this.user);
-      if(this.profileForm.value.phone) this.profileForm.controls['phone'].disable();
-    }
+    this.appservice.data.sessionUser.subscribe(res=> {
+      this.user=res;
+      if(this.user) {
+        this.profileForm.patchValue(this.user);
+        if(this.profileForm.value.phone)
+          this.profileForm.controls['phone'].disable();
+        if(!this.profileForm.value.dob)
+          this.profileForm.controls['dob'].setValue((new Date('1970-01-01')).toISOString())
+      }
+    });
   }
 
   async updateProfileDetail() {
     try {
       if(!this.profileForm.valid) throw Error('Invalid form input');
-      const response: Record<string, any> = await lastValueFrom(
+      const respone: Record<string, any> = await lastValueFrom(
         this.appservice.calls.updateMyAccountCall(this.profileForm.value)
       );
-      console.log(response);
+      this.appservice.alert.showSuccessMessage('Update profile', respone['message']);
+      this.appservice.data.setUserData(respone['data']);
     } catch(e) {
       await this.appservice.alert.showError('Update Profile', e);
     }

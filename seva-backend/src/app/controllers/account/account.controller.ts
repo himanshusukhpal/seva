@@ -33,7 +33,7 @@ export class AccountController {
     const schema = Joi.object({
       name: Joi.string().required(),
       dob: Joi.date().allow(null),
-      email: Joi.string().email().allow(null, '')
+      email: Joi.string().allow(null, '')
     });
     validateRequest(req, res, next, schema);
   }
