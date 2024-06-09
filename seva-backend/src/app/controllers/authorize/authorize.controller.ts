@@ -32,7 +32,8 @@ export class AuthController {
     try {
       let account = await accountService.getAccountByPhone(req.body.phone);
       if(!account) account = await accountService.signUpAccount(req.body);
-      const accessToken = tokenService.generateToken({ accountId: account.id });
+      const accountId = account.get('id');
+      const accessToken = tokenService.generateToken({ accountId });
       const date = new Date();
       date.setDate(date.getDate() + 1);
       respond.success(res, `Sign In success`, {

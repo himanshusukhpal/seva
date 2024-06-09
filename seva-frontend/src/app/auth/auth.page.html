@@ -16,10 +16,13 @@
         <ion-list>
           <ion-item lines="none">
             <ion-input
+              style="-webkit-text-security:none"
               errorText="Mobile no. is required"
               label="+91"
               placeholder="Enter your mobile number"
               formControlName="phone"
+              type="text"
+              maxLength="10"
             ></ion-input>
             <ion-button
               slot="end"

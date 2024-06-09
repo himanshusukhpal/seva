@@ -43,6 +43,7 @@ apiRouter.use((req, res, next) => {
   (new AuthMiddleware()).verifyAccountAccess(req, res, next);
 });
 apiRouter.use('/account', (new AccountController()).router);
+apiRouter.use('/address', (new AccountController()).router);
 
 app.use('/api', apiRouter);
 

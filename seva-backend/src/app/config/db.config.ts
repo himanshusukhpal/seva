@@ -1,7 +1,6 @@
 import dotenv from 'dotenv';
 
 import { Sequelize } from 'sequelize';
-// import { DynamoDB } from "@aws-sdk/client-dynamodb";
 
 import { indexModels } from '../models/index.models';
 
@@ -9,10 +8,8 @@ dotenv.config();
 
 const { DB_HOST, DB_USER, DB_PASSWORD, DB_NAME } = process.env;
 
-let db: Record<string, any> = {};
-
 // connect to db
-const sequelize = new Sequelize(
+export const sequelizeConn = new Sequelize(
   DB_NAME ? DB_NAME : '',
   DB_USER ? DB_USER : '',
   DB_PASSWORD ? DB_PASSWORD : '',
@@ -28,28 +25,14 @@ const sequelize = new Sequelize(
   }
 );
 
-// const ddb = new DynamoDB({
-//   region: process.env.AWS_REGION,
-//   credentials: {
-//     accessKeyId: process.env.AWS_ACCESS_KEY_ID ? process.env.AWS_ACCESS_KEY_ID : '',
-//     secretAccessKey: process.env.AWS_ACCESS_KEY_SECRET ? process.env.AWS_ACCESS_KEY_SECRET : ''
-//   }
-// });
+const db = indexModels(sequelizeConn);
 
-// Compiling exported object db
-db.Sequelize = Sequelize;
-db.sequelize = sequelize;
+sequelizeConn.sync({ alter: true })
+.then(() => {
+  console.log('Synced db.');
+})
+.catch((err: any) => {
+  console.log('Failed to sync db: ' + err.message);
+});
 
-// Initialize ModelsS
-db = indexModels(db);
-
-db.sequelize.sync({ alter: true })
-  .then(() => {
-    console.log('Synced db.');
-  })
-  .catch((err: any) => {
-    console.log('Failed to sync db: ' + err.message);
-  });
-
-// export { db, ddb };
 export { db };

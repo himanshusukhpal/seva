@@ -18,8 +18,10 @@ export class ProviderDetailController {
 
   async getProviderDetail(req: Request, res: Response, next: NextFunction) {
     try {
-      const providerDetail = await providerService.getAccountProviderDetail(req.headers.accountId as string, true);
-      respond.success(res, 'Provider Detail Fetched', providerDetail);
+      const providerDetail = await providerService.getAccountProviderDetail(
+        req.headers.accountId as string, true
+      );
+      respond.success(res, 'Provider Detail Fetched', providerDetail || {});
     } catch (e) {
       if((e as any).message==='Provider Detail Not Found') respond.unauthorized(res);
       else next(e);

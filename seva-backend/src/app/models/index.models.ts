@@ -1,18 +1,33 @@
-import { initAccount } from "./account/account.model";
-import { initProviderDetail } from "./provider/provider-detail.model";
+import { Sequelize } from "sequelize";
 
-export function indexModels (db: Record<string, any>) {
-  
-  const sequelize = db.sequelize;
+import { account, initAccount } from "./account/account.model";
+import { address, initAddress } from './address/address.model';
+import { providerDetail, initProviderDetail  } from "./provider/provider-detail.model";
 
-  const Account = initAccount(sequelize);
-  const ProviderDetail = initProviderDetail(sequelize);
+export interface DbModelsInterface {
+  accounts: typeof account,
+  addresses: typeof address,
+  providerDetails: typeof providerDetail
+}
 
-  Account.hasMany(ProviderDetail, { foreignKey: 'accountId' });
+export function indexModels ( sequelizeConn: Sequelize) {
+
+  const Account = initAccount(sequelizeConn);
+  const Address = initAddress(sequelizeConn);
+  const ProviderDetail = initProviderDetail(sequelizeConn);
+
   ProviderDetail.belongsTo(Account, { foreignKey: 'accountId' });
+  Account.hasOne(ProviderDetail, { foreignKey: 'accountId' });
 
-  db.accounts = Account;
-  db.providerDetails = ProviderDetail;
+  Account.belongsToMany(Address, { through: 'account-address' });
+  Address.belongsToMany(Account, { through: 'account-address' });
+
+  const db: DbModelsInterface = {
+    accounts: Account,
+    addresses: Address,
+    providerDetails: ProviderDetail
+  };
 
   return db;
+  
 }

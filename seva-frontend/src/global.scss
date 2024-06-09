@@ -50,3 +50,11 @@
   padding-right: 15px;
   --padding-start: 0px;
 }
+
+.footer-button-floating {
+  position: absolute;
+  bottom: 10px;
+  width: 90%;
+  left: 50%;
+  transform: translateX(-50%);
+}

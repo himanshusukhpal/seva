@@ -1,4 +1,4 @@
-import { db } from '../config/db.config';
+import { db, sequelizeConn } from '../config/db.config';
 
 export class AccountService {
 
@@ -7,17 +7,25 @@ export class AccountService {
     if(account) return account;
     else throw Error('Account Not Found');
   }
+  
+  async getAccountByIdWithProviderDetail (id: string) {
+    const account = await db.accounts.findByPk(id, {
+      include: db.providerDetails
+    });
+    if(account) return account;
+    else throw Error('Account Not Found');
+  }
 
   async getAccountByPhone (phone: string) {
-    return await db.accounts.findOne({ 
-      where: { 
-        phone 
+    return await db.accounts.findOne({
+      where: {
+        phone
       }
     });
   }
   
   async signUpAccount(requestBody: Record<string, any>) {
-    return db.sequelize.transaction(async (t: any) => {
+    return sequelizeConn.transaction(async (t: any) => {
       const newAccount = Object.assign(
         requestBody, 
         {
@@ -31,10 +39,10 @@ export class AccountService {
     });
   }
 
-  async updateAccount(accountId: string, requestBody: Record<string, any>) {
-    return db.sequelize.transaction(async (t: any) => {
+  async updateAccount(accountId: string, accountUpdatePayload: Record<string, any>) {
+    return sequelizeConn.transaction(async (t: any) => {
       const account = await this.getAccountById(accountId);
-      Object.assign(account, requestBody);
+      await account.update(accountUpdatePayload);
       const updatedAccount = await account.save({ transaction: t });
       return updatedAccount;
     });

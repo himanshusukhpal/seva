@@ -1,8 +1,24 @@
 .profile-avatar {
-  margin-left: 50%;
-  transform: translateX(-50%);
-  margin-top: 35px;
-  margin-bottom: 20px;
-  width: 125px;
-  height: 125px;
+  width: 100px;
+  height: 100px;
+  margin: auto;
+}
+
+.provider-profile-grid {
+  ion-row {
+    height: 200px;
+  }
+  ion-col {
+    text-align: center;
+    border: 1px solid grey;
+  }
+  ion-icon {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 50px;
+  }
+  // ion-icon {
+  //   font-size: large;
+  // }
 }

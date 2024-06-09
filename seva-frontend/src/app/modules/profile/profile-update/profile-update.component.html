@@ -1,0 +1,117 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Edit Profile
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismiss()">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<br>
+<form [formGroup]="profileForm">
+  <ion-list>
+    <ion-item lines="none">
+      <ion-input
+        label="Name"
+        formControlName="name"
+        errorText="Valid name is required"
+      ></ion-input>
+    </ion-item>
+    <ion-item class="item-padded">
+      <span slot="start">
+        D.O.B
+      </span>
+      <ion-datetime-button
+        datetime="dob-datetime"
+      ></ion-datetime-button>
+      <ion-modal [keepContentsMounted]="true">
+        <ng-template>
+          <ion-datetime
+            id="dob-datetime"
+            presentation="date"
+            formControlName="dob"
+          ></ion-datetime>
+        </ng-template>
+      </ion-modal>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-input
+        label="Email"
+        formControlName="email"
+        errorText="Valid email is required"
+      ></ion-input>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-input
+        label="Phone"
+        formControlName="phone"
+        errorText="Valid phone is required"
+      ></ion-input>
+    </ion-item>
+    <br>
+    <ion-item lines="none">
+      <ion-checkbox
+        formControlName="isProvider"
+      >
+        Register as a provider
+      </ion-checkbox>
+    </ion-item>
+  </ion-list>
+</form>
+
+<form
+  [formGroup]="providerDetailForm"
+  *ngIf="profileForm.value.isProvider"
+>
+  <ion-list>
+    <ion-list-header>
+      Provider Details
+    </ion-list-header>
+    <ion-item lines="none">
+      <ion-input
+        label="Aadhar"
+        formControlName="aadhar"
+        errorText="Invalid aadhar input"
+      ></ion-input>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-input
+        label="PAN"
+        formControlName="pan"
+        errorText="Invalid pan input"
+      ></ion-input>
+    </ion-item>
+  </ion-list>
+  <br>
+  <fieldset style="margin: 0 10px 0 10px">
+    <legend>Emergency Contact</legend>
+    <ion-list>
+      <ion-item lines="none">
+        <ion-input
+          label="Name"
+          formControlName="emergencyContactName"
+          errorText="Invalid emergency contact name"
+        ></ion-input>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-input
+          label="Phone"
+          formControlName="emergencyContactPhone"
+          errorText="Invalid emergency contact number"
+        ></ion-input>
+      </ion-item>
+    </ion-list>
+  </fieldset>
+</form>
+
+<ion-button
+  expand="block"
+  (click)="updateProfileDetail()"
+  class="footer-button-floating"
+>
+  Update
+</ion-button>
