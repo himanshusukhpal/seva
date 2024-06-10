@@ -51,7 +51,11 @@ export class ProfileUpdateComponent implements OnInit, OnDestroy {
         if(!this.profileForm.value.dob)
           this.profileForm.controls['dob'].setValue((new Date('1970-01-01')).toISOString())
       }
-      if(this.user?.['providerDetail']) this.providerDetailForm.patchValue(this.user['providerDetail']);
+      if(this.user?.['providerDetail']) {
+        this.providerDetailForm.patchValue(this.user['providerDetail']);
+        if(this.user?.['isProvider']) this.providerDetailForm.enable();
+        else this.providerDetailForm.disable();
+      }
     });
   }
 

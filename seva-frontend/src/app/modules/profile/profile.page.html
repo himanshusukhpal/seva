@@ -149,8 +149,8 @@
 
 </ion-content>
 
-<ion-modal trigger="edit-profile">
+<ion-modal trigger="edit-profile" [keepContentsMounted]="true">
   <ng-template>
-    <app-profile-update></app-profile-update>
+    <app-profile-update style="height: calc(100% - 113px);"></app-profile-update>
   </ng-template>
 </ion-modal>

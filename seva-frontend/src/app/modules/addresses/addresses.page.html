@@ -1,7 +1,9 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
+      <ion-button (click)="navBack()">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
     </ion-buttons>
     <ion-title>My Addresses</ion-title>
   </ion-toolbar>
@@ -14,3 +16,7 @@
     </ion-toolbar>
   </ion-header>
 </ion-content>
+
+<ion-button class="footer-button-floating">
+  Add new Address
+</ion-button>
