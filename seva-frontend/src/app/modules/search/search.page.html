@@ -1,0 +1,48 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Search</ion-title>
+    <ion-buttons slot="end">
+      <ion-button fill="undefined" shape="round">
+        <ion-icon slot="icon-only" name="notifications"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Search</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-list>
+    <ion-list-header>
+      <ion-searchbar></ion-searchbar>
+    </ion-list-header>
+  </ion-list>
+
+  <ion-grid class="box-grid ion-text-center">
+    <ng-template ngFor [ngForOf]="tiles" let-i="index">
+      <ng-template [ngIf]="i%2===0">
+        <ion-row class="height-200">
+          <ion-col *ngIf="tiles[i] as tile1">
+            <p>
+              {{ tile1.label }}
+            </p>
+            <br>
+            <ion-icon [name]="tile1.iconName"></ion-icon>
+          </ion-col>
+          <ion-col *ngIf="tiles[i+1] as tile2">
+            <p>
+              {{ tile2.label }}
+            </p>
+            <br>
+            <ion-icon [name]="tile2.iconName"></ion-icon>
+          </ion-col>
+        </ion-row>
+      </ng-template>
+    </ng-template>
+  </ion-grid>
+
+</ion-content>

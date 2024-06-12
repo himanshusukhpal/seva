@@ -9,8 +9,12 @@ const routes: Routes = [
     component: HomePage,
     children: [
       {
-        path: 'home',
-        loadChildren: () => import('./tab1/tab1.module').then(m => m.Tab1PageModule)
+        path: 'calendar',
+        loadChildren: () => import('./calendar/calendar.module').then( m => m.CalendarPageModule)
+      },
+      {
+        path: 'search',
+        loadChildren: () => import('./search/search.module').then(m => m.SearchPageModule)
       },
       {
         path: 'profile',
@@ -19,7 +23,7 @@ const routes: Routes = [
       {
         path: '',
         pathMatch: 'full',
-        redirectTo: 'home'
+        redirectTo: 'search'
       }
     ]
   },
@@ -27,6 +31,19 @@ const routes: Routes = [
     path: 'addresses',
     loadChildren: () => import('./addresses/addresses.module').then( m => m.AddressesPageModule)
   },
+  {
+    path: 'skills',
+    loadChildren: () => import('./skills/skills.module').then( m => m.SkillsPageModule)
+  },  {
+    path: 'clients',
+    loadChildren: () => import('./clients/clients.module').then( m => m.ClientsPageModule)
+  },
+  {
+    path: 'providers',
+    loadChildren: () => import('./providers/providers.module').then( m => m.ProvidersPageModule)
+  },
+
+
 ];
 
 @NgModule({

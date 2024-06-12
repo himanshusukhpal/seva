@@ -90,7 +90,7 @@
         </ion-card-subtitle>
       </ion-label>
     </ion-item>
-    <ion-item>
+    <!-- <ion-item>
       <ion-icon slot="end" name="chevron-forward"></ion-icon>
       <ion-label>
         Home
@@ -107,8 +107,8 @@
           Share, Edit, and Add Family Details
         </ion-card-subtitle>
       </ion-label>
-    </ion-item>
-    <ion-item>
+    </ion-item> -->
+    <ion-item (click)="appservice.navRootForward('providers')">
       <ion-icon slot="end" name="chevron-forward"></ion-icon>
       <ion-label>
         Providers
@@ -119,33 +119,30 @@
     </ion-item>
   </ion-list>
 
-  <!-- <ion-grid class="provider-profile-grid ion-text-center">
-    <ion-row>
-      <ion-col size="12">
-        <p>
-          Profession, Skillset, and Service Areas
-        </p>
-        <br>
-        <ion-icon name="briefcase"></ion-icon>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col size="6">
-        <p>
-          Address
-        </p>
-        <br>
-        <ion-icon name="home"></ion-icon>
-      </ion-col>
-      <ion-col size="6" (click)="appservice.navRootForward('verification-docs')">
-        <p>
-          Verification Docs
-        </p>
-        <br>
-        <ion-icon name="folder"></ion-icon>
-      </ion-col>
-    </ion-row>
-  </ion-grid> -->
+  <br>
+  <ion-list *ngIf="user?.['isProvider']">
+    <ion-list-header>
+      Provider Details
+    </ion-list-header>
+    <ion-item (click)="appservice.navRootForward('skills')">
+      <ion-icon slot="end" name="chevron-forward"></ion-icon>
+      <ion-label>
+        Skills
+        <ion-card-subtitle mode="md">
+          Share, Edit, and Add Skills
+        </ion-card-subtitle>
+      </ion-label>
+    </ion-item>
+    <ion-item (click)="appservice.navRootForward('clients')">
+      <ion-icon slot="end" name="chevron-forward"></ion-icon>
+      <ion-label>
+        Clients
+        <ion-card-subtitle mode="md">
+          List of clients
+        </ion-card-subtitle>
+      </ion-label>
+    </ion-item>
+  </ion-list>
 
 </ion-content>
 
