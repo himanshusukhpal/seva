@@ -16,13 +16,10 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-list>
-    <ion-list-header>
-      <ion-searchbar></ion-searchbar>
-    </ion-list-header>
-  </ion-list>
+  <br>
+  <ion-searchbar mode="ios"></ion-searchbar>
 
-  <ion-grid class="box-grid ion-text-center">
+  <ion-grid class="box-grid ion-text-center search-grid">
     <ng-template ngFor [ngForOf]="tiles" let-i="index">
       <ng-template [ngIf]="i%2===0">
         <ion-row class="height-200">

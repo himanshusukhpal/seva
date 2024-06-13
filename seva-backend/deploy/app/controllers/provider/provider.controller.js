@@ -15,7 +15,7 @@ class ProviderDetailController {
     async getProviderDetail(req, res, next) {
         try {
             const providerDetail = await providerService.getAccountProviderDetail(req.headers.accountId, true);
-            respond.success(res, 'Provider Detail Fetched', providerDetail);
+            respond.success(res, 'Provider Detail Fetched', providerDetail || {});
         }
         catch (e) {
             if (e.message === 'Provider Detail Not Found')

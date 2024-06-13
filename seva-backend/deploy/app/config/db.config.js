@@ -3,17 +3,14 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.db = void 0;
+exports.db = exports.sequelizeConn = void 0;
 const dotenv_1 = __importDefault(require("dotenv"));
 const sequelize_1 = require("sequelize");
-// import { DynamoDB } from "@aws-sdk/client-dynamodb";
 const index_models_1 = require("../models/index.models");
 dotenv_1.default.config();
 const { DB_HOST, DB_USER, DB_PASSWORD, DB_NAME } = process.env;
-let db = {};
-exports.db = db;
 // connect to db
-const sequelize = new sequelize_1.Sequelize(DB_NAME ? DB_NAME : '', DB_USER ? DB_USER : '', DB_PASSWORD ? DB_PASSWORD : '', {
+exports.sequelizeConn = new sequelize_1.Sequelize(DB_NAME ? DB_NAME : '', DB_USER ? DB_USER : '', DB_PASSWORD ? DB_PASSWORD : '', {
     host: DB_HOST,
     dialect: 'mysql',
     pool: {
@@ -23,19 +20,9 @@ const sequelize = new sequelize_1.Sequelize(DB_NAME ? DB_NAME : '', DB_USER ? DB
         idle: 10000
     }
 });
-// const ddb = new DynamoDB({
-//   region: process.env.AWS_REGION,
-//   credentials: {
-//     accessKeyId: process.env.AWS_ACCESS_KEY_ID ? process.env.AWS_ACCESS_KEY_ID : '',
-//     secretAccessKey: process.env.AWS_ACCESS_KEY_SECRET ? process.env.AWS_ACCESS_KEY_SECRET : ''
-//   }
-// });
-// Compiling exported object db
-db.Sequelize = sequelize_1.Sequelize;
-db.sequelize = sequelize;
-// Initialize ModelsS
-exports.db = db = (0, index_models_1.indexModels)(db);
-db.sequelize.sync({ alter: true })
+const db = (0, index_models_1.indexModels)(exports.sequelizeConn);
+exports.db = db;
+exports.sequelizeConn.sync({ alter: true })
     .then(() => {
     console.log('Synced db.');
 })

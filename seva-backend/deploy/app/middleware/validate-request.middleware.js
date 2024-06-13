@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.validateRequest = void 0;
-function validateRequest(req, res, next, schema, unknown = 'allowUnknown') {
+function validateRequest(req, res, next, schema, unknown = 'stripUnknown') {
     try {
         const options = {
             abortEarly: false, // include all errors
