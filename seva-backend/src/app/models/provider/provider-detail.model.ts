@@ -6,7 +6,6 @@ export function initProviderDetail (sequelize: Sequelize) {
   providerDetail.init(
     {
       accountId: { type: DataTypes.INTEGER, allowNull: false },
-      status: { type: DataTypes.BOOLEAN, allowNull: false },
       aadhar: { type: DataTypes.STRING },
       pan: { type: DataTypes.STRING },
       emergencyContactName: { type: DataTypes.STRING },
@@ -16,26 +15,7 @@ export function initProviderDetail (sequelize: Sequelize) {
     },
     {
       sequelize,
-      // defaultScope: {
-        // exclude password hash by default
-        // attributes: {
-        //   exclude: ['passwordHash']
-        // }
-      // },
       tableName: 'provider-details',
-      scopes: {
-        active: {
-          where: {
-            status: true
-          }
-        },
-        // include hash with this scope
-        // withHash: {
-        //   attributes: {
-        //     include: ['passwordHash']
-        //   }
-        // }
-      }
     }
   );
 

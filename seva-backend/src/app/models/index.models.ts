@@ -19,8 +19,8 @@ export function indexModels ( sequelizeConn: Sequelize) {
   ProviderDetail.belongsTo(Account, { foreignKey: 'accountId' });
   Account.hasOne(ProviderDetail, { foreignKey: 'accountId' });
 
-  Account.belongsToMany(Address, { through: 'account-address' });
-  Address.belongsToMany(Account, { through: 'account-address' });
+  Address.belongsTo(Address, { foreignKey: 'accountId' });
+  Account.hasMany(Account, { foreignKey: 'accountId' });
 
   const db: DbModelsInterface = {
     accounts: Account,

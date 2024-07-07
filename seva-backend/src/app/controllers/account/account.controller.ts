@@ -31,7 +31,7 @@ export class AccountController {
       );
       respond.success(res, 'Account Fetched', account);
     } catch (e) {
-      if((e as any).message==='Account Not Found') respond.unauthorized(res);
+      if((e as any).message==='Account Not Found') respond.notFound(res);
       else next(e);
     }
   }
@@ -83,7 +83,7 @@ export class AccountController {
       }
       respond.success(res, 'Account Updated', updatedAccount);
     } catch (e) {
-      if((e as any).message==='Account Not Found') respond.unauthorized(res);
+      if((e as any).message==='Account Not Found') respond.notFound(res);
       else next(e);
     }
   }

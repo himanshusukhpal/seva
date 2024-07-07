@@ -1,0 +1,73 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Edit Address
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismiss()">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="addressForm">
+    <ion-list>
+      <ion-item lines="none">
+        <ion-input
+          label="Line 1"
+          formControlName="line1"
+          errorText="Address line 1 is required"
+        ></ion-input>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-input
+          label="Line 2"
+          formControlName="line2"
+          errorText="Valid Address line 2 is required"
+        ></ion-input>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-input
+          label="Locality"
+          formControlName="locality"
+          errorText="Locality is required"
+        ></ion-input>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-input
+          label="Pincode"
+          formControlName="pincode"
+          errorText="Pincode is required"
+        ></ion-input>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-input
+          label="City"
+          formControlName="city"
+          errorText="City is required"
+        ></ion-input>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-input
+          label="State"
+          formControlName="state"
+          errorText="State is required"
+        ></ion-input>
+      </ion-item>
+      <br>
+    </ion-list>
+  </form>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-button
+      expand="block"
+      (click)="updateAddress()"
+    >
+      Update
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>

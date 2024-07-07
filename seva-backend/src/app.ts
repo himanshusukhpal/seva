@@ -8,6 +8,7 @@ import { AuthMiddleware } from './app/middleware/auth.middleware';
 
 import { AuthController } from './app/controllers/authorize/authorize.controller';
 import { AccountController } from './app/controllers/account/account.controller';
+import { AddressController } from './app/controllers/address/address.controller';
 
 const app = express();
 
@@ -43,7 +44,7 @@ apiRouter.use((req, res, next) => {
   (new AuthMiddleware()).verifyAccountAccess(req, res, next);
 });
 apiRouter.use('/account', (new AccountController()).router);
-apiRouter.use('/address', (new AccountController()).router);
+apiRouter.use('/address', (new AddressController()).router);
 
 app.use('/api', apiRouter);
 

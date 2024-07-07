@@ -232,7 +232,10 @@ export class AppService {
 
     // }
     // this.data.syncAppData();
-    if(sessionType==='new') this.navRootForward('');
+    if(sessionType==='new') {
+      if(!user['name']) this.navRootForward('profile');
+      else this.navRootForward('')
+    }
     // const userId = user?.['userInfo']?.[0]?.['id']||'MalfunctioningUser';
     // this.analytics.setUserId(userId);
     // if(this.data.device?.platform!=='web') this.crashlytics.setUserId(userId);

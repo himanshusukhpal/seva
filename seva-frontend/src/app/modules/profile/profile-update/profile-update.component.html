@@ -68,7 +68,7 @@
     </ion-list>
   </form>
 
-  <div class="provider-detail-container" *ngIf="user?.['providerDetail']['id']">
+  <div class="provider-detail-container">
     <div [ngClass]="profileForm.controls['isProvider'].value?'':'disabled-form-overlay'"></div>
     <form [formGroup]="providerDetailForm">
       <ion-list>

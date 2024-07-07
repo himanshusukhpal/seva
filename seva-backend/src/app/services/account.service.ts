@@ -25,27 +25,28 @@ export class AccountService {
   }
   
   async signUpAccount(requestBody: Record<string, any>) {
-    return sequelizeConn.transaction(async (t: any) => {
-      const newAccount = Object.assign(
-        requestBody, 
-        {
-          status: true,
-          createdBy: 0,
-          updatedBy: 0
-        }
-      );
-      const savedAccount = await (new db.accounts(newAccount)).save({ transaction: t });
-      return savedAccount;
-    });
+    const newAccount = Object.assign(
+      requestBody, 
+      {
+        status: true,
+        createdBy: 0,
+        updatedBy: 0
+      }
+    );
+    return sequelizeConn.transaction(async (t: any) => 
+      await (new db.accounts(newAccount)).save({ transaction: t })
+    );
   }
 
-  async updateAccount(accountId: string, accountUpdatePayload: Record<string, any>) {
-    return sequelizeConn.transaction(async (t: any) => {
-      const account = await this.getAccountById(accountId);
-      await account.update(accountUpdatePayload);
-      const updatedAccount = await account.save({ transaction: t });
-      return updatedAccount;
-    });
+  async updateAccount(
+    accountId: string,
+    accountUpdatePayload: Record<string, any>
+  ) {
+    const account = await this.getAccountById(accountId);
+    await account.update(accountUpdatePayload);
+    return sequelizeConn.transaction(async (t: any) =>
+      await account.save({ transaction: t })
+    );
   }
   
 }

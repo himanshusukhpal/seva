@@ -11,7 +11,7 @@ export function initAddress (sequelize: Sequelize) {
       city: { type: DataTypes.STRING, allowNull: true },
       state: { type: DataTypes.STRING, allowNull: true },
       pincode: { type: DataTypes.STRING, allowNull: true },
-      country: { type: DataTypes.STRING, allowNull: true },
+      // country: { type: DataTypes.STRING, allowNull: true },
       status: { type: DataTypes.BOOLEAN, allowNull: false },
       createdBy: { type: DataTypes.INTEGER, allowNull: false },
       updatedBy: { type: DataTypes.INTEGER, allowNull: false }

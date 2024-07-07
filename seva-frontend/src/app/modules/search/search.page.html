@@ -15,11 +15,56 @@
       <ion-title size="large">Search</ion-title>
     </ion-toolbar>
   </ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button id="addresses-dropdown-trigger">
+        <ion-icon
+          slot="icon-only"
+          name="home"
+          color="dark"
+        ></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title
+      (click)="addressDropdownPopover.present()"
+      mode="md"
+      style="
+        margin: 0;
+        padding-left: 5px;
+        font-size: 17px;
+      "
+    >
+      I - 110, Sector 27, Noida, UP - 201301, I - 110, Sector 27, Noida, UP - 201301
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button id="filter-modal-trigger">
+        <ion-icon
+          slot="icon-only"
+          name="filter-circle-outline"
+          color="dark"
+        ></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-popover
+      trigger="addresses-dropdown-trigger"
+      #addressDropdownPopover
+      >
+      <ng-template>
+        <ion-list slot="content">
+          <ion-item>
+            address 1
+          </ion-item>
+          <ion-item>
+            address 2
+          </ion-item>
+        </ion-list>
+      </ng-template>
+    </ion-popover>
+  </ion-toolbar>
 
-  <br>
   <ion-searchbar mode="ios"></ion-searchbar>
 
-  <ion-grid class="box-grid ion-text-center search-grid">
+  <ion-grid class="box-grid ion-text-center search-grid" style="padding-top: 0px">
     <ng-template ngFor [ngForOf]="tiles" let-i="index">
       <ng-template [ngIf]="i%2===0">
         <ion-row class="height-200">
@@ -42,4 +87,80 @@
     </ng-template>
   </ion-grid>
 
+  <ion-modal
+    trigger="filter-modal-trigger"
+    [initialBreakpoint]="0.5"
+    [breakpoints]="[0, 0.25, 0.5, 0.8]"
+  >
+    <ng-template>
+      <ion-list style="margin-top: 10px;">
+        <ion-list-header style="margin: 6px auto;" mode="ios">
+          Radius: {{ radiusRange.value }} km
+        </ion-list-header>
+        <ion-item>
+          <ion-range
+            style="margin-top: 10px;"
+            aria-label="Range with ticks"
+            #radiusRange
+            [ticks]="true"
+            [snaps]="true"
+            pin="true"
+            [min]="2"
+            value="2"
+            step="2"
+            [max]="10"
+            color="dark"
+          ></ion-range>
+        </ion-item>
+        <ion-list-header style="margin: 6px auto;" mode="ios">
+          Service type
+        </ion-list-header>
+        <ion-radio-group>
+          <ion-grid>
+            <ion-row>
+              <ion-col size="6">
+                <ion-item>
+                  <ion-radio>
+                    House-Keeping
+                  </ion-radio>
+                </ion-item>
+              </ion-col>
+              <ion-col size="6">
+                <ion-item>
+                  <ion-radio>
+                    Cooking
+                  </ion-radio>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col size="6">
+                <ion-item>
+                  <ion-radio>
+                    Baby & Differently abled care
+                  </ion-radio>
+                </ion-item>
+              </ion-col>
+              <ion-col size="6">
+                <ion-item>
+                  <ion-radio>
+                    Pet Grooming & walking
+                  </ion-radio>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                <ion-item>
+                  <ion-radio>
+                    Elederly & Health care
+                  </ion-radio>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-radio-group>
+      </ion-list>
+    </ng-template>
+  </ion-modal>
 </ion-content>

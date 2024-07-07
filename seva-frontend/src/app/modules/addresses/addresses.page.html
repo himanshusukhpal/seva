@@ -15,11 +15,28 @@
       <ion-title size="large">My Addresses</ion-title>
     </ion-toolbar>
   </ion-header>
+  <ion-refresher slot="fixed" (ionRefresh)="refreshPage($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <ion-card
+    *ngFor="let address of addresses"
+    style="address-card"
+    (click)="updateAddress(address)"
+  >
+    <ion-card-header>
+      <ion-card-title>
+        {{ address['line1'] }}
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+
+    </ion-card-content>
+  </ion-card>
 </ion-content>
 
 <ion-footer>
   <ion-toolbar>
-    <ion-button expand="block">
+    <ion-button expand="block" id="edit-address">
       Add new Address
     </ion-button>
   </ion-toolbar>

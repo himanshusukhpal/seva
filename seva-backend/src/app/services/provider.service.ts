@@ -26,7 +26,6 @@ export class ProviderService {
         providerDetailPayload, 
         {
           accountId,
-          status: true,
           createdBy: accountId,
           updatedBy: accountId
         }

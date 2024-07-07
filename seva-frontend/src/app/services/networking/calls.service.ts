@@ -33,4 +33,10 @@ export class CallsService {
 
   updateMyAccountCall = (payload: Record<string, any>) => this.http.post(`${this.baseUrl}/account`, payload);
 
+  getAddressesCall = () => this.http.get(`${this.baseUrl}/address`);
+
+  createAddressCall = (payload: Record<string, any>) => this.http.post(`${this.baseUrl}/address`, payload);
+
+  updateAddressCall = (addressId: string, payload: Record<string, any>) => this.http.put(`${this.baseUrl}/address/${addressId}`, payload);
+
 }

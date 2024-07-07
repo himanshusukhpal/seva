@@ -12,6 +12,11 @@ const routes: Routes = [
     path: '',
     canActivate: [authGaurd],
     loadChildren: () => import('./modules/home.module').then( m => m.HomePageModule)
+  },
+  {
+    path: '**',
+    pathMatch: 'full',
+    redirectTo: ''
   }
 ];
 @NgModule({
